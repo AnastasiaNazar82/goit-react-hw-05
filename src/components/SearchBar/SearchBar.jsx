@@ -13,20 +13,20 @@ export default function SearchBart({ onSubmit }) {
       });
     }
     onSubmit(value);
+    e.target.reset();
   };
 
   return (
-    <header className={css.header}>
-      <form className={css.form} onSubmit={handleSubmit}>
-        <input
-          className={css.input}
-          placeholder="Search images and photos"
-          name="search"
-          autoFocus
-        />
-        <button className={css.button} type="submit">
-        </button>
-      </form>
-    </header>
+    <form className={css.form} onSubmit={handleSubmit}>
+      <input
+        className={css.input}
+        placeholder="Search movie"
+        name="search"
+        autoFocus
+      />
+      <button className={css.button} type="submit">
+        Search
+      </button>
+    </form>
   );
 }
