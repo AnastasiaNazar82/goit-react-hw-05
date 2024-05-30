@@ -19,8 +19,8 @@ export default function MoviesPage() {
     async function asyncWrapper() {
       try {
         setIsLoading(true);
-        const dataOfMovies = await getSearchMovie(movieTitle);
-        setSearchMovies(dataOfMovies);
+        const dataMovies = await getSearchMovie(movieTitle);
+        setSearchMovies(dataMovies);
       } catch (error) {
         return toast.error("This is an error! Please try again later!");
       } finally {

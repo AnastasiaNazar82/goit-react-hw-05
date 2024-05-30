@@ -6,9 +6,9 @@ import Loader from "./../../components/Loader/Loader.jsx";
 import css from "./MovieCast.module.css";
 
 export default function MovieCast() {
-  const { movieId } = useParams();
   const [listCast, setListCast] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
+  const { movieId } = useParams();
 
   useEffect(() => {
     if (!movieId) return;
@@ -16,8 +16,8 @@ export default function MovieCast() {
     async function asyncWrapper() {
       try {
         setIsLoading(true);
-        const dataOfCast = await getMoviesCast(movieId);
-        setListCast(dataOfCast.cast);
+        const dataCast = await getMoviesCast(movieId);
+        setListCast(dataCast.cast);
       } catch (error) {
         return toast.error("This is an error! Please try again later!");
       } finally {
