@@ -7,7 +7,7 @@ import css from "./MovieCast.module.css";
 
 export default function MovieCast() {
   const { movieId } = useParams();
-  const [listOfCast, setListOfCast] = useState([]);
+  const [listCast, setListCast] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
@@ -17,7 +17,7 @@ export default function MovieCast() {
       try {
         setIsLoading(true);
         const dataOfCast = await getMoviesCast(movieId);
-        setListOfCast(dataOfCast.cast);
+        setListCast(dataOfCast.cast);
       } catch (error) {
         return toast.error("This is an error! Please try again later!");
       } finally {
@@ -34,10 +34,10 @@ export default function MovieCast() {
     <div>
       {isLoading && <Loader />}
       <ul className={css.castList}>
-        {listOfCast &&
-          listOfCast.length > 0 &&
-          listOfCast.map(({ id, name, character, profile_path }) => (
-            <li key={id}>
+        {listCast &&
+          listCast.length > 0 &&
+          listCast.map(({ id, name, character, profile_path }) => (
+            <li key={id} className={css.listItem}>
               <div>
                 <img
                   src={
@@ -49,8 +49,8 @@ export default function MovieCast() {
                   alt="poster"
                 />
               </div>
-              <h3>{name}</h3>
-              <p>Character: {character}</p>
+              <h3 className={css.name}>{name}</h3>
+              <p className={css.character}>Character: {character}</p>
             </li>
           ))}
       </ul>

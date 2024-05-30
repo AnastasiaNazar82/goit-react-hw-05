@@ -44,8 +44,7 @@ export default function MovieDetailsPage() {
     return;
   }
 
-    return (
-      
+  return (
     <div className={css.detailsPage}>
       {isLoading && <Loader />}
       <Link to={backLinkHref.current} className={css.linkGoBack}>

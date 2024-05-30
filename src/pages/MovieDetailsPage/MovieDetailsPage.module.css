@@ -3,7 +3,7 @@
   flex-direction: row;
   gap: 20px;
   padding-bottom: 10px;
-  border-bottom: 2px solid rgb(219, 215, 215);
+  border-bottom: 2px solid rgba(59, 29, 44, 0.253);
 }
 
 .description {
@@ -35,7 +35,7 @@ p {
   padding-left: 30px;
   list-style: disc;
   padding-bottom: 20px;
-  border-bottom: 2px solid rgb(219, 215, 215);
+  border-bottom: 2px solid rgba(59, 29, 44, 0.808);
 }
 
 .detailsPage {
